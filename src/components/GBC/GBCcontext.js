@@ -1,0 +1,38 @@
+import React from "react";
+
+const GBCcontext = React.createContext({
+  currenc: "",
+  setCurrency: () => {},
+  answersObj: {},
+  setAnswersObj: () => {},
+  blurLeftSection: false,
+  setBlurLeftSection: () => {},
+  viewMoreDeatils: false,
+  setViewMoreDetails: () => {},
+  plateform: false,
+  setPlateform: () => {},
+  calculateReturns: {},
+  setCalculateReturns: () => {},
+  modalRateofReturn: false,
+  setModalRateofReturn: () => {},
+  userDetails: {},
+  setUserDetails: () => {},
+  userJourneyBtnActionName: "",
+  setUserJourneyBtnActionName: () => {},
+  rmEditable: false,
+  setRmEditable: () => {},
+  rmLevel: false,
+  setRmLevel: () => {},
+  apiBaseUrl: "",
+  setApiBaseUrl: () => {},
+  showPopup: false,
+  setShowPopup: () => {},
+  minimumReturnPercentage: null,
+  setMinimumReturnPercentage: () => {},
+  maximumReturnPercentage: null,
+  setMaximumReturnPercentage: () => {},
+  landingTime: null,
+  setLandingTime: () => {},
+});
+
+export default GBCcontext;

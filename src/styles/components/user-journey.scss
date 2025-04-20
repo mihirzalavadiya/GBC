@@ -1,0 +1,128 @@
+@import "../colors.scss";
+.user-journey-conatiner {
+  background: $kristal-dark-grey-60;
+  //   box-shadow: -18px -18px 36px rgba(255, 255, 255, 0.25), 18px 18px 36px rgba(0, 0, 0, 0.25);
+  box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25), 1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+
+  .user-journey-main {
+    padding: 24px;
+    .user-journey-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: $kristal-ecru-100;
+    }
+
+    @media (max-width: "768px") {
+      padding: 12px;
+
+      .user-journey-title {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    @media (max-width: "576px") {
+      padding: 16px;
+      .user-journey-title {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  @media (max-width: "1023px") {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.video-modal-rm {
+  .ant-modal-content {
+    padding: 0px !important;
+  }
+}
+
+.video-modal {
+  .ant-modal-content {
+    border-radius: 24px;
+  }
+  .ant-modal-body {
+    padding: 32px;
+    border-radius: 24px;
+  }
+  .video-container {
+    padding: 24px;
+    position: relative;
+    border-radius: 8px;
+    background: #1f1f1f;
+    margin-top: 24px;
+  }
+
+  .video-btn {
+    background: #f44336;
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .video-btn-footer {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    background: #3761c8;
+    border: 2px solid var(--kristal-blue-80);
+    border-radius: 10px;
+    padding: 9px 24px;
+    height: 100%;
+  }
+
+  .ant-checkbox-inner:hover {
+    border-color: #777777;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #777777;
+    border-color: #777777;
+  }
+}
+
+.vedio-tutorial-section {
+  padding: 12px 24px;
+  background: #363636;
+  box-shadow: 0px 4px 5px #1f1f1f inset;
+  border-radius: 15.88px;
+  border: 0.99px #777777 solid;
+
+  .vedio-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27.8px;
+  }
+
+  .video-btn-view {
+    background: #f44336;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.rm-save-changes-note {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #999999;
+}

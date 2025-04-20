@@ -1,0 +1,207 @@
+@import "../colors.scss";
+
+.fixed-the-width {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 16px;
+}
+
+.fixed-the-width-mobile {
+  margin: 0px -16px !important;
+}
+
+.radio-bg-container {
+  background-image: linear-gradient(311.07deg, #1f1f1f 35.12%, #f0ede4 140.4%);
+  border-radius: 32px;
+  padding: 1px;
+  box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
+    1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+  .radio-group-assets {
+    background: #1f1f1f;
+    padding: 10px;
+    border-radius: 32px;
+    width: 100%;
+
+    .ant-radio-button-wrapper {
+      background: transparent;
+      border: none;
+      padding: 7px 16px;
+      height: 100%;
+      width: 50%;
+      text-align: center;
+      white-space: nowrap;
+      border-radius: 32px;
+
+      @media (max-width: "767px") {
+        padding: 3px 16px;
+      }
+    }
+
+    .ant-radio-button-wrapper::before {
+      content: none;
+    }
+    .ant-radio-button-wrapper-checked span {
+      background: #f0ede4;
+      border-radius: 24px;
+      color: $kristal-dark-grey-80 !important;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .ant-radio-button-wrapper span {
+      color: $kristal-white;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+.assets-conatiner {
+  position: relative;
+  .asset-acclocation-main {
+    height: 312px;
+    overflow: auto;
+    padding: 6px;
+    .asset-allocation-container {
+      color: $kristal-white;
+      //   padding: 8px 0px;
+      .assets-color {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+      }
+
+      @media (max-width: "1023px") {
+        .assets-color {
+          height: 22px;
+          width: 22px;
+        }
+      }
+
+      @media (max-width: "767px") {
+        .assets-color {
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
+  }
+  .asset-allocation-blur {
+    filter: blur(3px);
+  }
+
+  .asset-suggested {
+    position: relative;
+    .asset-suggested-main {
+      height: 314px;
+      overflow: auto;
+      .asset-suggested-container {
+        color: $kristal-white;
+        background: $kristal-dark-grey-60;
+        margin-bottom: 5px;
+        padding: 7px;
+        border-radius: 4px;
+
+        .suggested-color {
+          width: 5px;
+          border-radius: 6px;
+        }
+      }
+    }
+    .asset-suggested-shadow {
+      position: absolute;
+      background: linear-gradient(180deg, #202020 0%, rgba(32, 32, 32, 0) 100%);
+      transform: rotate(-180deg);
+      bottom: 0px;
+      width: 100%;
+      height: 295px;
+    }
+  }
+  .error-messages-conatiner {
+    position: absolute;
+    background: linear-gradient(93.52deg, #f0ede4 -5.74%, #d2ddf9 119.29%);
+    border-radius: 16px;
+    top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 35px 16px;
+  }
+
+  .lock-the-feature {
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.asset-equity {
+  background-color: #5c59dc;
+}
+.asset-commodities {
+  background-color: #5786ff;
+}
+.asset-fixed-income {
+  background-color: #cd82fb;
+}
+.asset-reits {
+  background-color: #ffabce;
+}
+.asset-alternatives {
+  background-color: #ffd78a;
+}
+.asset-multi-asset {
+  background-color: #9e1065;
+}
+.asset-crypto {
+  background-color: #7165ba;
+}
+.asset-private-assets {
+  background-color: #363636;
+}
+.asset-pending-orders {
+  background-color: #f44336;
+}
+.asset-available-cash {
+  background-color: #00b267;
+}
+.asset-hybrid {
+  background-color: #777777;
+}
+
+.asset-equity-text {
+  color: #5c59dc;
+}
+.asset-commodities-text {
+  color: #5786ff;
+}
+.asset-fixed-income-text {
+  color: #cd82fb;
+}
+.asset-reits-text {
+  color: #ffabce;
+}
+.asset-alternatives-text {
+  color: #ffd78a;
+}
+.asset-multi-asset-text {
+  color: #9e1065;
+}
+.asset-crypto-text {
+  color: #7165ba;
+}
+.asset-private-assets-text {
+  color: #363636;
+}
+.asset-pending-orders-text {
+  color: #f44336;
+}
+.asset-available-cash-text {
+  color: #00b267;
+}
+.asset-hybrid-text {
+  color: #777777;
+}

@@ -1,0 +1,74 @@
+@import '../../styles/colors.scss';
+.common-modal {
+  .modal-title-gbc {
+    @media (max-width: '767px') {
+      font-weight: 700 !important;
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+  }
+  .modal-subtitle-gbc {
+    @media (max-width: '767px') {
+      font-weight: 400 !important;
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+  }
+  .save-modal-btns {
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: '767px') {
+      display: flex !important;
+      justify-content: center !important;
+      margin-top: 27px;
+    }
+  }
+  .ant-modal-content {
+    border-radius: 16px;
+    padding: 32px 41px;
+
+    @media (max-width: '767px') {
+      padding: 19px 28px !important;
+    }
+  }
+  .ant-modal-body {
+    padding: 0px !important;
+  }
+  .ant-modal-header {
+    border-radius: 16px 16px 0px 0px;
+    border-bottom: 0px;
+  }
+  .ant-modal-close {
+    top: 18px;
+    right: 38px;
+
+    @media (max-width: '767px') {
+      top: 17px !important;
+      right: 19px !important;
+    }
+  }
+  .btnLink {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--kristal-blue-80);
+    height: 100%;
+    padding: 9px 11px;
+  }
+  .btnModalEnable {
+    background: var(--kristal-blue-80);
+    border-radius: 10px;
+    padding: 9px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: $kristal-white;
+    height: 100%;
+    border: none !important;
+  }
+  .btnModalEnable:hover {
+    background: var(--kristal-blue-80) !important;
+    color: $kristal-white !important;
+    border: none !important;
+  }
+}
