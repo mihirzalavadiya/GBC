@@ -1,7 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { useState } from 'react';
 import { EditOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import GBCcontext from '../../../GBC/GBCcontext';
