@@ -62,6 +62,7 @@ const Layout = ({
   useEffect(() => {
     setLandingTime(new Date());
     analytics('GTC_PAGE_LANDED');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -108,17 +109,20 @@ const Layout = ({
         ?.catch((error) => console.log('getModalForAUserError', error));
     }
     sessionStorage?.removeItem('gbcflow');
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userDetailsData, isRmLevel]);
 
   useEffect(() => {
     setApiBaseUrl(baseUrl);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [baseUrl]);
 
   useEffect(() => {
     if (isRmLevel) {
       setRmLevel(isRmLevel);
     }
-  }, [isRmLevel, setRmLevel]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRmLevel]);
 
   useEffect(() => {
     if (isModalOpen === false) {
@@ -138,6 +142,7 @@ const Layout = ({
         setRmEditable(false);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPortal, userDetailsData, rmLevel]);
 
   return (

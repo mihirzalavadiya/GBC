@@ -120,6 +120,7 @@ const GBCQuestions = ({
     }
   }, [answersObj, answersObj.numberOfChildren, setAnswersObj]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedCalculate = useCallback(
     debounce((answers) => {
       const response = mockCalculateReturns(answers);
@@ -254,6 +255,7 @@ const GBCQuestions = ({
                             toolTipData,
                           },
                           idx
+                          // eslint-disable-next-line array-callback-return
                         ) => {
                           if (
                             key === 'child1Age' &&
