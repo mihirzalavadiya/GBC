@@ -1,4 +1,4 @@
-import { Col, Row, Select } from 'antd';
+import { Col, Row } from 'antd';
 import React, { useContext, useEffect, useState } from 'react';
 import GBCcontext from '../../../GBC/GBCcontext';
 import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
@@ -7,7 +7,16 @@ import { useNavigate } from 'react-router-dom';
 import { calculateTimeDifference } from '../utils';
 
 const GbcCurrencyChange = ({ analytics }) => {
-  const { currency, setCurrency, viewMoreDeatils, setViewMoreDetails, plateform, setUserJourneyBtnActionName, landingTime, userDetails } = useContext(GBCcontext);
+  const {
+    currency,
+    setCurrency,
+    viewMoreDeatils,
+    setViewMoreDetails,
+    plateform,
+    setUserJourneyBtnActionName,
+    landingTime,
+    userDetails,
+  } = useContext(GBCcontext);
   const { isMobile, isTablet } = useMediaQueryCustom();
   let navigate = useNavigate();
   const [backShow, setBackShow] = useState(true);
@@ -42,14 +51,33 @@ const GbcCurrencyChange = ({ analytics }) => {
   };
 
   return (
-    <Row className={`flex column-center ${!viewMoreDeatils && 'padding-left-16 padding-top-16 padding-right-16'} `}>
+    <Row
+      className={`flex column-center ${
+        !viewMoreDeatils && 'padding-left-16 padding-top-16 padding-right-16'
+      } `}
+    >
       <Col md={16} sm={16} xs={20}>
-        {console.log('viewMoreDeatils', viewMoreDeatils, backShow, userDetails, Object.keys(userDetails || {})?.length > 0)}
-        {(backShow || viewMoreDeatils) && Object.keys(userDetails || {})?.length > 0 && <LeftOutlined className={`margin-right-10 font-size-${isMobile ? '15' : '20'}`} style={{ color: '#ffffff' }} onClick={mobileBackHandler} />}
+        {console.log(
+          'viewMoreDeatils',
+          viewMoreDeatils,
+          backShow,
+          userDetails,
+          Object.keys(userDetails || {})?.length > 0
+        )}
+        {(backShow || viewMoreDeatils) &&
+          Object.keys(userDetails || {})?.length > 0 && (
+            <LeftOutlined
+              className={`margin-right-10 font-size-${isMobile ? '15' : '20'}`}
+              style={{ color: '#ffffff' }}
+              onClick={mobileBackHandler}
+            />
+          )}
         <span className="title">Goal-based Target-return Calculator</span>
       </Col>
       <Col md={8} sm={8} xs={4} className="flex end column-center">
-        {!isMobile && !isTablet && <span className="currency-label">Currency :</span>}
+        {!isMobile && !isTablet && (
+          <span className="currency-label">Currency :</span>
+        )}
         <span className="currency-value">{currency}</span>
       </Col>
     </Row>

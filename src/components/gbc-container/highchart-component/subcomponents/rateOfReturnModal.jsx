@@ -1,9 +1,9 @@
-import { Button, Col, Input, InputNumber, Modal, Row } from "antd";
-import React, { useContext, useEffect, useState } from "react";
-import { getModelGivenRateApi } from "../../../GBC/service";
-import GBCcontext from "../../../GBC/GBCcontext";
-import { calculateTimeDifference } from "../utils";
-import useMediaQueryCustom from "../../../GBC/useMediaQueryCustome";
+import { Button, Col, InputNumber, Modal, Row } from 'antd';
+import React, { useContext, useEffect, useState } from 'react';
+import { getModelGivenRateApi } from '../../../GBC/service';
+import GBCcontext from '../../../GBC/GBCcontext';
+import { calculateTimeDifference } from '../utils';
+import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
 
 const RateOfReturnModal = ({ analytics }) => {
   const [inputValue, setInputValue] = useState();
@@ -43,9 +43,9 @@ const RateOfReturnModal = ({ analytics }) => {
       ?.then((data) => {
         if (data) {
           const time = calculateTimeDifference(landingTime);
-          analytics("GTC_SAVE_CHANGES_MANUALLY", {
+          analytics('GTC_SAVE_CHANGES_MANUALLY', {
             time_spent: time,
-            type: "manual",
+            type: 'manual',
           });
           setCalculateReturns(data?.data);
           // setAnswersObj(data?.data?.gtcFilterRequest == null ? {} : data?.data?.gtcFilterRequest);
@@ -56,13 +56,13 @@ const RateOfReturnModal = ({ analytics }) => {
           setIsLoading(false);
         }
       })
-      .catch((error) => console.log("rateOfReturnApidataError", error))
+      .catch((error) => console.log('rateOfReturnApidataError', error))
       ?.finally(() => setIsLoading(false));
   };
 
   const handleKeypress = (e) => {
     //it triggers by pressing the enter key
-    console.log("e.keyCode", e.keyCode);
+    console.log('e.keyCode', e.keyCode);
     if (e.keyCode === 13) {
       rateOfReturnHandler();
     }
@@ -119,8 +119,8 @@ const RateOfReturnModal = ({ analytics }) => {
               className="modal-input"
               min={0}
               onChange={(e) => modalInputHandler(e)}
-              formatter={(value) => `${value ? value : 0}${value && "%"}`}
-              parser={(value) => value && value.replace("%", "")}
+              formatter={(value) => `${value ? value : 0}${value && '%'}`}
+              parser={(value) => value && value.replace('%', '')}
               controls={false}
               onKeyDown={handleKeypress}
             />

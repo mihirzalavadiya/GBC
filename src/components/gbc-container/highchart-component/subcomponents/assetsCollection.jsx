@@ -1,19 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
-import suggested from "../../../images/suggested.svg";
-import rightArrow from "../../../images/rightArrow.svg";
-import { Col, Radio, Row } from "antd";
+import React, { useContext, useState } from 'react';
+import rightArrow from '../../../images/rightArrow.svg';
+import { Col, Radio, Row } from 'antd';
 import {
   colorMap,
   assetAllocation,
   suggestedAssets,
   errorMessageData,
   colorMapping,
-} from "../utils";
-import useMediaQueryCustom from "../../../GBC/useMediaQueryCustome";
-import GBCcontext from "../../../GBC/GBCcontext";
-import lock from "../../../images/lock.svg";
-import giftCoin from "../../../images/giftCoin.svg";
-import defaltSuggestedAsstes from "../../../images/defaltSuggestedAsstes.svg";
+} from '../utils';
+import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
+import GBCcontext from '../../../GBC/GBCcontext';
+import lock from '../../../images/lock.svg';
+import giftCoin from '../../../images/giftCoin.svg';
+import defaltSuggestedAsstes from '../../../images/defaltSuggestedAsstes.svg';
 
 const AssetsCollection = () => {
   const {
@@ -26,16 +25,16 @@ const AssetsCollection = () => {
   } = useContext(GBCcontext);
   const { modelPortfolio, rateOfReturn } = calculateReturns || {};
   const { assetAllocation, kristalHoldingsResponse } = modelPortfolio || {};
-  const [mode, setMode] = useState("asset_allocation");
+  const [mode, setMode] = useState('asset_allocation');
   const { isMobile, isTablet } = useMediaQueryCustom();
 
   if (userDetails && Object.keys(userDetails).length > 0) {
     assetAllocation?.sort((a, b) => b.allocationPercent - a.allocationPercent);
   } else {
     assetAllocation?.sort((a, b) => {
-      if (a.assetClass === "Equity") {
+      if (a.assetClass === 'Equity') {
         return -1; // Move "Equity" to the beginning
-      } else if (b.assetClass === "Equity") {
+      } else if (b.assetClass === 'Equity') {
         return 1; // Move "Equity" to the end
       } else {
         return 0; // Preserve the relative order of other asset classes
@@ -52,10 +51,10 @@ const AssetsCollection = () => {
     const isStructureNotes = false;
     //const kristalDetailsRoute = isStructureNotes ? `/structuredproducts/${226}/${kristalId}` : kristalType === "TAILOR_ELONS" ? `/tailormade/${226}/${kristalId}` : `/kristals/${kristalId}/details${kristalSubtype === "STARTUP" ? `?type=startup${""}` : ""}`;
     const kristalDetailsRoute = `/kristals/${kristalId}/details${
-      kristalSubtype === "STARTUP" ? `?type=startup${""}` : ""
+      kristalSubtype === 'STARTUP' ? `?type=startup${''}` : ''
     }`;
 
-    if (typeof window != "undefined") {
+    if (typeof window != 'undefined') {
       window.location.href = kristalDetailsRoute;
     }
   };
@@ -71,7 +70,7 @@ const AssetsCollection = () => {
     const kristalDetailsRoute = `/portfolio/kristal/detail/${kristalType
       .toString()
       .toLowerCase()}/${kristalId}?template=${false}&subtype=${kristalSubtype}`;
-    if (typeof window != "undefined") {
+    if (typeof window != 'undefined') {
       window.location.href = kristalDetailsRoute;
     }
   };
@@ -108,13 +107,13 @@ const AssetsCollection = () => {
           </Radio.Group>
         </div>
         <div className={`assets-conatiner`}>
-          {mode === "asset_allocation" && (
+          {mode === 'asset_allocation' && (
             <div
               className={`margin-top-10 asset-acclocation-main ${
                 !rmLevel &&
                 errorTitle &&
                 errorSubTitle &&
-                "asset-allocation-blur"
+                'asset-allocation-blur'
               }`}
             >
               {assetAllocation ? (
@@ -124,8 +123,8 @@ const AssetsCollection = () => {
                     className={`asset-allocation-container ${
                       !rmLevel &&
                       Object.keys(userDetails || {}).length === 0 &&
-                      item.assetClass !== "Equity" &&
-                      "asset-allocation-blur"
+                      item.assetClass !== 'Equity' &&
+                      'asset-allocation-blur'
                     } flex column-center`}
                   >
                     <Col span={2}>
@@ -140,8 +139,8 @@ const AssetsCollection = () => {
                       span={18}
                       className={`${
                         isTablet
-                          ? "font-size-16 line-height-20"
-                          : "font-size-12 line-height-18"
+                          ? 'font-size-16 line-height-20'
+                          : 'font-size-12 line-height-18'
                       }`}
                     >
                       {item?.assetClass}
@@ -150,18 +149,18 @@ const AssetsCollection = () => {
                       span={4}
                       className={`flex end ${
                         isTablet
-                          ? "font-size-16 line-height-20"
-                          : "font-size-12 line-height-18"
+                          ? 'font-size-16 line-height-20'
+                          : 'font-size-12 line-height-18'
                       }`}
                     >
-                      {(item?.allocationPercent * 100)?.toFixed(2) + "%"}
+                      {(item?.allocationPercent * 100)?.toFixed(2) + '%'}
                     </Col>
                     {index !== assetAllocation?.length - 1 && (
                       <Col
                         span={24}
                         style={{
-                          border: "1px solid #363636",
-                          margin: "7px 0px",
+                          border: '1px solid #363636',
+                          margin: '7px 0px',
                         }}
                       ></Col>
                     )}
@@ -171,23 +170,23 @@ const AssetsCollection = () => {
                 <>
                   <img
                     src={
-                      typeof defaltSuggestedAsstes === "object"
+                      typeof defaltSuggestedAsstes === 'object'
                         ? defaltSuggestedAsstes.src
                         : defaltSuggestedAsstes
                     }
-                    width={"100%"}
+                    width={'100%'}
                   />
                 </>
               )}
             </div>
           )}
-          {mode === "suggested_assets" && (
+          {mode === 'suggested_assets' && (
             <div
               className={`asset-suggested ${
                 !rmLevel &&
                 errorTitle &&
                 errorSubTitle &&
-                "asset-allocation-blur"
+                'asset-allocation-blur'
               }`}
             >
               <div className="margin-top-20 asset-suggested-main">
@@ -198,14 +197,14 @@ const AssetsCollection = () => {
                       className={`asset-suggested-container flex column-center space-around ${
                         ((!rmLevel &&
                           userDetails &&
-                          userDetails.kycStatus !== "APPROVED") ||
+                          userDetails.kycStatus !== 'APPROVED') ||
                           (!rmLevel &&
                             !errorTitle &&
                             !errorSubTitle &&
                             userDetails &&
-                            userDetails.kycStatus === "APPROVED" &&
-                            userDetails.billingType === "DIGITAL")) &&
-                        "asset-allocation-blur"
+                            userDetails.kycStatus === 'APPROVED' &&
+                            userDetails.billingType === 'DIGITAL')) &&
+                        'asset-allocation-blur'
                       }`}
                     >
                       <Col span={3} className="flex">
@@ -226,11 +225,11 @@ const AssetsCollection = () => {
                       <Col span={14}>{item?.kristalName}</Col>
                       <Col span={6} className="flex end column-center">
                         <span className="margin-right-10">
-                          {(item?.weightPercent * 100)?.toFixed(2) + "%"}
+                          {(item?.weightPercent * 100)?.toFixed(2) + '%'}
                         </span>
                         <img
                           src={
-                            typeof rightArrow === "object"
+                            typeof rightArrow === 'object'
                               ? rightArrow.src
                               : rightArrow
                           }
@@ -257,18 +256,18 @@ const AssetsCollection = () => {
                   <>
                     <img
                       src={
-                        typeof defaltSuggestedAsstes === "object"
+                        typeof defaltSuggestedAsstes === 'object'
                           ? defaltSuggestedAsstes.src
                           : defaltSuggestedAsstes
                       }
-                      width={"100%"}
+                      width={'100%'}
                     />
                   </>
                 )}
               </div>
               {!rmLevel &&
                 userDetails &&
-                userDetails.kycStatus !== "APPROVED" && (
+                userDetails.kycStatus !== 'APPROVED' && (
                   <div className="asset-suggested-shadow"></div>
                 )}
             </div>
@@ -277,7 +276,7 @@ const AssetsCollection = () => {
             errorTitle &&
             errorSubTitle &&
             userDetails &&
-            userDetails.kycStatus !== "APPROVED" && (
+            userDetails.kycStatus !== 'APPROVED' && (
               <Row className="error-messages-conatiner">
                 <Col
                   span={24}
@@ -297,7 +296,7 @@ const AssetsCollection = () => {
             errorTitle &&
             errorSubTitle &&
             userDetails &&
-            userDetails.kycStatus === "APPROVED" && (
+            userDetails.kycStatus === 'APPROVED' && (
               <Row className="error-messages-conatiner">
                 <Col
                   span={24}
@@ -314,24 +313,24 @@ const AssetsCollection = () => {
               </Row>
             )}
           {!rmLevel &&
-            mode === "suggested_assets" &&
+            mode === 'suggested_assets' &&
             !errorTitle &&
             !errorSubTitle &&
             userDetails &&
-            userDetails.kycStatus !== "APPROVED" && (
+            userDetails.kycStatus !== 'APPROVED' && (
               <Row className="lock-the-feature">
                 <Col span={24} className="flex row-center">
-                  {userDetails.billingType === "DIGITAL" ? (
+                  {userDetails.billingType === 'DIGITAL' ? (
                     <img
                       src={
-                        typeof giftCoin === "object" ? giftCoin.src : giftCoin
+                        typeof giftCoin === 'object' ? giftCoin.src : giftCoin
                       }
                       height={118}
                       width={118}
                     />
                   ) : (
                     <img
-                      src={typeof lock === "object" ? lock.src : lock}
+                      src={typeof lock === 'object' ? lock.src : lock}
                       height={118}
                       width={118}
                     />
@@ -347,16 +346,16 @@ const AssetsCollection = () => {
               </Row>
             )}
           {!rmLevel &&
-            mode === "suggested_assets" &&
+            mode === 'suggested_assets' &&
             !errorTitle &&
             !errorSubTitle &&
             userDetails &&
-            userDetails.kycStatus === "APPROVED" &&
-            userDetails.billingType === "DIGITAL" && (
+            userDetails.kycStatus === 'APPROVED' &&
+            userDetails.billingType === 'DIGITAL' && (
               <Row className="lock-the-feature">
                 <Col span={24} className="flex row-center">
                   <img
-                    src={typeof giftCoin === "object" ? giftCoin.src : giftCoin}
+                    src={typeof giftCoin === 'object' ? giftCoin.src : giftCoin}
                     height={118}
                     width={118}
                   />

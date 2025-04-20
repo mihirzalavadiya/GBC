@@ -1,27 +1,8 @@
-import Icon, {
-  DownOutlined,
-  InfoCircleOutlined,
-  MinusOutlined,
-  PlusOutlined,
-  UpOutlined,
-} from '@ant-design/icons';
-import {
-  Button,
-  Col,
-  Collapse,
-  Divider,
-  Input,
-  InputNumber,
-  Row,
-  Select,
-  Slider,
-  Tooltip,
-} from 'antd';
+import Icon, { InfoCircleOutlined } from '@ant-design/icons';
+import { Button, Col, Collapse, InputNumber, Row, Slider, Tooltip } from 'antd';
 import React, { useCallback, useContext, useEffect } from 'react';
 import {
   calculatingData,
-  defaultAnswerObj,
-  formatCurrency,
   formatNumberWithCommas,
   mockCalculateReturns,
   numberFormat,
@@ -30,7 +11,6 @@ import {
 import GBCcontext from '../../GBC/GBCcontext';
 import lock from '../../images/lock.svg';
 import useMediaQueryCustom from '../../GBC/useMediaQueryCustome';
-import { calculateReturnsApi } from '../../GBC/service';
 import UserJourney from '../highchart-component/subcomponents/userJourney';
 import upArrow from '../../images/upArrow.svg';
 import downArrow from '../../images/downArrow.svg';
@@ -163,14 +143,6 @@ const GBCQuestions = ({
       if (answersObj && !blurLeftSection) {
         if (answersObj) {
           debouncedCalculate(answersObj);
-          // const response = mockCalculateReturns(answersObj);
-          // setCalculateReturns(response);
-          // setMinimumReturnPercentage(
-          //   response?.modelPortfolio?.minimumReturnPercentage
-          // );
-          // setMaximumReturnPercentage(
-          //   response?.modelPortfolio?.maximumReturnPercentage
-          // );
         } else {
           setCalculateReturns(calculatingData);
           setMinimumReturnPercentage(
@@ -180,15 +152,6 @@ const GBCQuestions = ({
             calculatingData?.modelPortfolio?.maximumReturnPercentage
           );
         }
-        // calculateReturnsApi(answersObj, baseUrl, userDetails, plateform)
-        //   ?.then((data) => {
-        //     setCalculateReturns(data?.data);
-        //     setMinimumReturnPercentage(data?.data?.modelPortfolio?.minimumReturnPercentage);
-        //     setMaximumReturnPercentage(data?.data?.modelPortfolio?.maximumReturnPercentage);
-        //   })
-        //   .catch((error) => {
-        //     console.log("errorData", error);
-        //   });
       }
     }, 1000);
     return () => clearTimeout(getData);
