@@ -1,6 +1,6 @@
-import axios from "axios";
-import { getHeadersRM } from "../gbc-container/highchart-component/utils";
-import { getHeadersPortal } from "../gbc-container/highchart-component/utils";
+import axios from 'axios';
+import { getHeadersRM } from '../gbc-container/highchart-component/utils';
+import { getHeadersPortal } from '../gbc-container/highchart-component/utils';
 
 function getRequest(data) {
   return axios.get(data.url, {
@@ -15,11 +15,21 @@ function postRequest(data) {
   });
 }
 
-export const calculateReturnsApi = (payloadData, apiBaseUrl, userDetails, plateform) => {
+export const calculateReturnsApi = (
+  payloadData,
+  apiBaseUrl,
+  userDetails,
+  plateform
+) => {
   const requestParam = {
-    method: "post",
+    method: 'post',
     url: `${apiBaseUrl}/kristal-manager-ws/gtc/api/v1/calculateReturns`,
-    headers: Object.keys(userDetails || {}).length > 0 ? (plateform ? getHeadersPortal() : getHeadersRM()) : {},
+    headers:
+      Object.keys(userDetails || {}).length > 0
+        ? plateform
+          ? getHeadersPortal()
+          : getHeadersRM()
+        : {},
 
     payload: payloadData,
     // params,
@@ -28,10 +38,16 @@ export const calculateReturnsApi = (payloadData, apiBaseUrl, userDetails, platef
   return postRequest(requestParam);
 };
 
-export const getModelGivenRateApi = (params, userDetails, apiBaseUrl, plateform) => {
+export const getModelGivenRateApi = (
+  params,
+  userDetails,
+  apiBaseUrl,
+  plateform
+) => {
   const { userId } = userDetails || {};
+  console.log('userId', userId);
   const requestParam = {
-    method: "get",
+    method: 'get',
     url: `${apiBaseUrl}/kristal-manager-ws/gtc/api/v1/getModelGivenRate`,
     headers: plateform ? getHeadersPortal() : getHeadersRM(),
     params,
@@ -41,24 +57,35 @@ export const getModelGivenRateApi = (params, userDetails, apiBaseUrl, plateform)
 
 export const getModelForAUser = (userDetails, apiBaseUrl, plateform) => {
   const { userId } = userDetails || {};
+  console.log('userId', userId);
   const requestParam = {
-    method: "get",
+    method: 'get',
     url: `${apiBaseUrl}/kristal-manager-ws/gtc/api/v1/getModelForAUser`,
     headers: plateform ? getHeadersPortal() : getHeadersRM(),
   };
   return getRequest(requestParam);
 };
 
-export const saveParams = (answersObj, rateOfReturn, modelPortfolioId, showPopup, userDetails, apiBaseUrl, plateform) => {
+export const saveParams = (
+  answersObj,
+  rateOfReturn,
+  modelPortfolioId,
+  showPopup,
+  userDetails,
+  apiBaseUrl,
+  plateform
+) => {
   const { userId } = userDetails || {};
+  console.log('userId', userId);
   const payloadData = {
-    gtcFilterRequest: Object.keys(answersObj || {}).length > 0 ? answersObj : null,
+    gtcFilterRequest:
+      Object.keys(answersObj || {}).length > 0 ? answersObj : null,
     rateOfReturn: rateOfReturn,
     modelPortfolioId: modelPortfolioId,
     showPopup: showPopup === true ? false : false,
   };
   const requestParam = {
-    method: "post",
+    method: 'post',
     url: `${apiBaseUrl}/kristal-manager-ws/gtc/api/v1/saveParams`,
     headers: plateform ? getHeadersPortal() : getHeadersRM(),
     payload: payloadData,

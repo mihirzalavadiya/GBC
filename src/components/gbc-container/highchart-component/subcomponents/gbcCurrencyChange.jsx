@@ -9,7 +9,6 @@ import { calculateTimeDifference } from '../utils';
 const GbcCurrencyChange = ({ analytics }) => {
   const {
     currency,
-    setCurrency,
     viewMoreDeatils,
     setViewMoreDetails,
     plateform,
@@ -22,7 +21,7 @@ const GbcCurrencyChange = ({ analytics }) => {
   const [backShow, setBackShow] = useState(true);
 
   useEffect(() => {
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       const urlData = window.location.href;
       const arrayOfUrl = urlData && urlData.split('?');
       const paramData = arrayOfUrl && arrayOfUrl.slice(-1);
@@ -31,7 +30,7 @@ const GbcCurrencyChange = ({ analytics }) => {
         setBackShow(false);
       }
     }
-  }, [window]);
+  }, []);
 
   const mobileBackHandler = () => {
     const time = calculateTimeDifference(landingTime);

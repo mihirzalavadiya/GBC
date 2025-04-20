@@ -75,7 +75,6 @@ const GBCQuestions = ({
 }) => {
   const {
     currency,
-    setCurrency,
     blurLeftSection,
     setBlurLeftSection,
     answersObj,
@@ -84,7 +83,6 @@ const GBCQuestions = ({
     setCalculateReturns,
     userDetails,
     rmEditable,
-    apiBaseUrl,
     setMinimumReturnPercentage,
     setMaximumReturnPercentage,
     rmLevel,
@@ -120,7 +118,7 @@ const GBCQuestions = ({
         univCost: 0,
       });
     }
-  }, [answersObj?.numberOfChildren]);
+  }, [answersObj, answersObj.numberOfChildren, setAnswersObj]);
 
   const debouncedCalculate = useCallback(
     debounce((answers) => {
@@ -155,6 +153,7 @@ const GBCQuestions = ({
       }
     }, 1000);
     return () => clearTimeout(getData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [answersObj, blurLeftSection]);
 
   const collapseHeader = (title) => {
@@ -215,12 +214,14 @@ const GBCQuestions = ({
                 if (isActive) {
                   return (
                     <img
+                      alt=""
                       src={typeof upArrow === 'object' ? upArrow.src : upArrow}
                     />
                   );
                 } else {
                   return (
                     <img
+                      alt=""
                       src={
                         typeof downArrow === 'object'
                           ? downArrow.src
@@ -237,7 +238,7 @@ const GBCQuestions = ({
                     <Panel
                       header={collapseHeader(title)}
                       key={index}
-                      className={index == 0 ? '' : 'margin-top-16'}
+                      className={index === 0 ? '' : 'margin-top-16'}
                     >
                       {(questions || []).map(
                         (
@@ -285,7 +286,7 @@ const GBCQuestions = ({
                             return (
                               <Row
                                 className={
-                                  idx == 0
+                                  idx === 0
                                     ? 'flex column-center'
                                     : 'flex column-center space-top'
                                 }
@@ -316,7 +317,7 @@ const GBCQuestions = ({
                                         setAnswersObj({
                                           ...answersObj,
                                           [key]:
-                                            answersObj && answersObj[key] == 0
+                                            answersObj && answersObj[key] === 0
                                               ? 0
                                               : answersObj &&
                                                 answersObj[key] - 1,
@@ -382,7 +383,7 @@ const GBCQuestions = ({
                             return (
                               <Row
                                 className={
-                                  idx == 0
+                                  idx === 0
                                     ? 'flex column-center'
                                     : 'flex column-center space-top'
                                 }
@@ -596,7 +597,10 @@ const GBCQuestions = ({
             <Col span={24} className="question-blur-effect">
               <Row className="quetion-blur-content-main">
                 <Col span={24}>
-                  <img src={typeof lock === 'object' ? lock.src : lock} />
+                  <img
+                    alt=""
+                    src={typeof lock === 'object' ? lock.src : lock}
+                  />
                 </Col>
                 <Col
                   span={24}
@@ -608,6 +612,7 @@ const GBCQuestions = ({
                 <Col span={24} className="margin-top-14">
                   {plateform ? (
                     <img
+                      alt=""
                       src={
                         typeof useCalculatorBtn === 'object'
                           ? useCalculatorBtn.src
@@ -621,6 +626,7 @@ const GBCQuestions = ({
                     />
                   ) : (
                     <img
+                      alt=""
                       src={
                         typeof useCalcRM === 'object'
                           ? useCalcRM.src

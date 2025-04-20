@@ -10,11 +10,7 @@ import RateOfReturnModal from './rateOfReturnModal';
 
 const PieChart = ({ analytics }) => {
   const {
-    blurLeftSection,
-    setBlurLeftSection,
     calculateReturns,
-    setCalculateReturns,
-    modalRateofReturn,
     setModalRateofReturn,
     rmEditable,
     userDetails,
@@ -42,15 +38,7 @@ const PieChart = ({ analytics }) => {
       item?.allocationPercent * 100,
     ]);
 
-  const [data, setData] = useState([]);
-  const [equityData, setEquityData] = useState(37.5);
-  const [commoditiesData, setCommoditiesData] = useState(37.5);
-  const [fixedIncomeData, setFixedIncomeData] = useState(37.5);
-  const [reitsData, setReitsData] = useState(37.5);
-  const [alternativesData, setAlternativesData] = useState(37.5);
-  // const [modal2Open, setModal2Open] = useState(false);
-  const [inputValue, setInputValue] = useState();
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const colorOutput = transformedData
     ? assetAllocation
         ?.map((item) => {
@@ -165,58 +153,8 @@ const PieChart = ({ analytics }) => {
         },
       ],
     }),
-    [transformedData]
+    [colorOutput, transformedData]
   );
-
-  // useEffect(() => {
-  //   if (rateOfReturn) {
-  //     setInputValue(rateOfReturn);
-  //   }
-  // }, [rateOfReturn]);
-
-  // const modalInputHandler = (e) => {
-  //   setInputValue(e.target.value);
-  // };
-
-  // const rateOfReturnHandler = () => {
-  //   const params = { rateOfReturn: inputValue };
-  //   getModelGivenRateApi(params)
-  //     ?.then((data) => {
-  //       setCalculateReturns(data.data);
-  //       setBlurLeftSection(true);
-  //       setModalRateofReturn(false);
-  //     })
-  //     .catch((error) => console.log("rateOfReturnApidataError", error));
-  // };
-
-  // const modalBody = () => {
-  //   return (
-  //     <>
-  //       <Row>
-  //         <Col span={24} className="font-size-14 line-height-20 text-777 margin-top-10">
-  //           Know what you’re aiming for? You can input your preferred target rate of
-  //           <br /> returns here, we’ll show you the model portfolio that’ll get you there.
-  //         </Col>
-  //         <Col span={24} className="margin-top-56">
-  //           <Input
-  //             placeholder="Basic usage"
-  //             value={inputValue}
-  //             className="modal-input"
-  //             onChange={(e) => modalInputHandler(e)}
-  //           />
-  //         </Col>
-  //         <Col span={24} className="flex row-center margin-top-56">
-  //           <Button className="btnModalEnable" type="primary" onClick={rateOfReturnHandler}>
-  //             Save
-  //           </Button>
-  //           <Button className="btnLink" type="link" onClick={() => setModalRateofReturn(false)}>
-  //             Cancel
-  //           </Button>
-  //         </Col>
-  //       </Row>
-  //     </>
-  //   );
-  // };
 
   return (
     <div className="pie-chart-conatiner">
@@ -257,20 +195,6 @@ const PieChart = ({ analytics }) => {
         )}
       </div>
       <RateOfReturnModal analytics={analytics} />
-      {/* <Modal
-        title={
-          <span className="bold font-size-18 line-height-24 text-1f1f1f">Manually input Target Rate of Returns</span>
-        }
-        centered
-        visible={modalRateofReturn}
-        onOk={() => setModalRateofReturn(false)}
-        onCancel={() => setModalRateofReturn(false)}
-        footer={false}
-        width={609}
-        className="edit-returns-modal"
-      >
-        {modalBody()}
-      </Modal> */}
     </div>
   );
 };

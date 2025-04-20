@@ -22,6 +22,7 @@ function HighChartComponent({
     useContext(GBCcontext);
 
   const { rmClientId } = userDetails || {};
+  console.log('rmClientId', rmClientId);
 
   return (
     <Row
@@ -70,14 +71,6 @@ function HighChartComponent({
         )}
       {/* {!isMobile && !isTablet && <CommonModal analytics={analytics} upgradeAccreditedRequestHandlerForGBC={upgradeAccreditedRequestHandlerForGBC} />} */}
       <Col span={24} className="margin-top-24">
-        {/* <div className="vedio-tutorial-section">
-          <div className="flex space-between column-center width-100">
-            <div className="vedio-text">View Tutorial</div>
-            <div className="video-btn-view" onClick={() => setIsModalOpen(true)}>
-              <img src={typeof videoBtnImage === "object" ? videoBtnImage.src : videoBtnImage} height={20} />
-            </div>
-          </div>
-        </div> */}
         <div className="vedio-tutorial-section">
           <div className="flex space-between column-center width-100">
             <div className="vedio-text">View Tutorial</div>
@@ -86,6 +79,7 @@ function HighChartComponent({
               onClick={() => setIsModalOpen(true)}
             >
               <img
+                alt=""
                 src={
                   typeof videoBtnImage === 'object'
                     ? videoBtnImage.src

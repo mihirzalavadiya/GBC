@@ -1,4 +1,4 @@
-import { Button, Col, Row, Select } from 'antd';
+import { Button, Col, Row } from 'antd';
 import React, { useContext } from 'react';
 import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
 import GBCcontext from '../../../GBC/GBCcontext';
@@ -13,9 +13,8 @@ const MobilePieChart = ({
   analytics,
   upgradeAccreditedRequestHandlerForGBC,
   setIsModalOpen,
-  isModalOpen,
 }) => {
-  const { isMobile, isTablet } = useMediaQueryCustom();
+  const { isTablet } = useMediaQueryCustom();
   const {
     setViewMoreDetails,
     calculateReturns,
@@ -149,6 +148,7 @@ const MobilePieChart = ({
                 onClick={() => setIsModalOpen(true)}
               >
                 <img
+                  alt=""
                   src={
                     typeof videoBtnImage === 'object'
                       ? videoBtnImage.src

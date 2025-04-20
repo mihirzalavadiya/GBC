@@ -412,17 +412,8 @@ export const formatNumberWithCommas = (number) => {
 };
 
 export const mockCalculateReturns = (answersObj) => {
-  const {
-    currentAge,
-    retirementAge,
-    currentInv,
-    netSavings,
-    emi,
-    inflationRate,
-    yearsToHousePurchase,
-  } = answersObj;
-
-  const yearsToRetirement = retirementAge - currentAge;
+  const { currentInv, netSavings, emi, inflationRate, yearsToHousePurchase } =
+    answersObj;
 
   // Convert string numbers to actual numbers
   const inv = parseFloat(currentInv);

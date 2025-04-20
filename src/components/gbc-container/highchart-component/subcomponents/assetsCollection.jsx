@@ -1,13 +1,7 @@
 import React, { useContext, useState } from 'react';
 import rightArrow from '../../../images/rightArrow.svg';
 import { Col, Radio, Row } from 'antd';
-import {
-  colorMap,
-  assetAllocation,
-  suggestedAssets,
-  errorMessageData,
-  colorMapping,
-} from '../utils';
+import { errorMessageData, colorMapping } from '../utils';
 import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
 import GBCcontext from '../../../GBC/GBCcontext';
 import lock from '../../../images/lock.svg';
@@ -26,7 +20,7 @@ const AssetsCollection = () => {
   const { modelPortfolio, rateOfReturn } = calculateReturns || {};
   const { assetAllocation, kristalHoldingsResponse } = modelPortfolio || {};
   const [mode, setMode] = useState('asset_allocation');
-  const { isMobile, isTablet } = useMediaQueryCustom();
+  const { isTablet } = useMediaQueryCustom();
 
   if (userDetails && Object.keys(userDetails).length > 0) {
     assetAllocation?.sort((a, b) => b.allocationPercent - a.allocationPercent);
@@ -47,9 +41,6 @@ const AssetsCollection = () => {
   };
 
   const redirectToDetails = (kristalId, kristalType, kristalSubtype) => {
-    // const isStructureNotes = displayName == 'Structured Notes'
-    const isStructureNotes = false;
-    //const kristalDetailsRoute = isStructureNotes ? `/structuredproducts/${226}/${kristalId}` : kristalType === "TAILOR_ELONS" ? `/tailormade/${226}/${kristalId}` : `/kristals/${kristalId}/details${kristalSubtype === "STARTUP" ? `?type=startup${""}` : ""}`;
     const kristalDetailsRoute = `/kristals/${kristalId}/details${
       kristalSubtype === 'STARTUP' ? `?type=startup${''}` : ''
     }`;
@@ -169,6 +160,7 @@ const AssetsCollection = () => {
               ) : (
                 <>
                   <img
+                    alt=""
                     src={
                       typeof defaltSuggestedAsstes === 'object'
                         ? defaltSuggestedAsstes.src
@@ -215,7 +207,7 @@ const AssetsCollection = () => {
                           }}
                         ></div>
                         <img
-                          // src={typeof suggested === "object" ? suggested.src : suggested}
+                          alt=""
                           src={item?.imageUrl}
                           width={18}
                           height={18}
@@ -228,6 +220,7 @@ const AssetsCollection = () => {
                           {(item?.weightPercent * 100)?.toFixed(2) + '%'}
                         </span>
                         <img
+                          alt=""
                           src={
                             typeof rightArrow === 'object'
                               ? rightArrow.src
@@ -255,6 +248,7 @@ const AssetsCollection = () => {
                 ) : (
                   <>
                     <img
+                      alt=""
                       src={
                         typeof defaltSuggestedAsstes === 'object'
                           ? defaltSuggestedAsstes.src
@@ -322,6 +316,7 @@ const AssetsCollection = () => {
                 <Col span={24} className="flex row-center">
                   {userDetails.billingType === 'DIGITAL' ? (
                     <img
+                      alt=""
                       src={
                         typeof giftCoin === 'object' ? giftCoin.src : giftCoin
                       }
@@ -330,6 +325,7 @@ const AssetsCollection = () => {
                     />
                   ) : (
                     <img
+                      alt=""
                       src={typeof lock === 'object' ? lock.src : lock}
                       height={118}
                       width={118}
@@ -355,6 +351,7 @@ const AssetsCollection = () => {
               <Row className="lock-the-feature">
                 <Col span={24} className="flex row-center">
                   <img
+                    alt=""
                     src={typeof giftCoin === 'object' ? giftCoin.src : giftCoin}
                     height={118}
                     width={118}

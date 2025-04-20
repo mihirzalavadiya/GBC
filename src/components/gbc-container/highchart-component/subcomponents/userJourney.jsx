@@ -1,11 +1,7 @@
 import { Button, Col, Row } from 'antd';
 import React, { useContext } from 'react';
 import userJourneyImage from '../../../images/userjourney.svg';
-import {
-  calculateTimeDifference,
-  errorMessageData,
-  userJourneyData,
-} from '../utils';
+import { calculateTimeDifference, userJourneyData } from '../utils';
 import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
 import GBCcontext from '../../../GBC/GBCcontext';
 
@@ -16,32 +12,17 @@ const UserJourney = ({
   analytics,
 }) => {
   const {
-    viewMoreDeatils,
-    setViewMoreDetails,
     userDetails,
     setUserJourneyBtnActionName,
-    answersObj,
     calculateReturns,
-    apiBaseUrl,
-    plateform,
-    minimumReturnPercentage,
     maximumReturnPercentage,
-    rmLevel,
     landingTime,
   } = useContext(GBCcontext);
 
   const { title, btn1, btn2 } = userJourneyData(userDetails) || {};
-  const { modelPortfolio, rateOfReturn } = calculateReturns || {};
-  const { modelPortfolioId } = modelPortfolio || {};
+  const { rateOfReturn } = calculateReturns || {};
 
   const { isMobile, isTablet } = useMediaQueryCustom();
-
-  const { errorTitle, errorSubTitle } =
-    errorMessageData(
-      rateOfReturn,
-      minimumReturnPercentage,
-      maximumReturnPercentage
-    ) || {};
 
   const btn1Handler = (btn1) => {
     if (btn1 === 'Talk to Advisor') {
@@ -70,17 +51,7 @@ const UserJourney = ({
   const btn2Handler = async (btn2) => {
     if (btn2 === 'Upgrade to Private Wealth') {
       setUserJourneyBtnActionName(btn2);
-      // await upgradeAccreditedRequestHandlerForGBC().then(() => {
-      // });
     } else if (btn2 === 'Signup') {
-      // const dataObj = {
-      //   gtcFilterRequest: answersObj,
-      //   rateOfReturn: rateOfReturn,
-      //   modelPortfolioId: modelPortfolioId,
-      // };
-
-      // const base64Data = btoa(JSON?.stringify(dataObj));
-      // localStorage.setItem("gbcData", base64Data);
       if (typeof window != 'undefined' && window.dataLayer) {
         window.dataLayer.push({
           event: 'Goal Base Calculator',
@@ -90,33 +61,9 @@ const UserJourney = ({
       }
       setUserJourneyBtnActionName(btn2);
     } else if (btn2 === 'Complete KYC') {
-      // localStorage.setItem("currentDashboardPage", "2");
-      // if (typeof window != "undefined") {
-      //   window.location.href = "/portfolio/start";
-      // }
       setUserJourneyBtnActionName(btn2);
     } else if (btn2 === 'Model Asset Allocation') {
       setUserJourneyBtnActionName(btn2);
-      // if (!rmLevel && errorTitle && errorSubTitle) {
-      //   const params = {
-      //     rateOfReturn: rateOfReturn < minimumReturnPercentage ? minimumReturnPercentage : rateOfReturn > maximumReturnPercentage && maximumReturnPercentage,
-      //   };
-      //   getModelGivenRateApi(params, userDetails, apiBaseUrl, plateform)
-      //     ?.then((data) => {
-      //       if (data) {
-      //         const { modelPortfolioId } = data.data.modelPortfolio || {};
-
-      //         if (typeof window != "undefined") {
-      //           window.location.href = plateform ? `/portfolio/modelportfolio/details/${modelPortfolioId}` : `kristalmodelportfolio/${modelPortfolioId}/details`;
-      //         }
-      //       }
-      //     })
-      //     .catch((error) => console.log("rateOfReturnApidataError", error));
-      // } else {
-      //   if (typeof window != "undefined") {
-      //     window.location.href = plateform ? `/portfolio/modelportfolio/details/${modelPortfolioId}` : `kristalmodelportfolio/${modelPortfolioId}/details`;
-      //   }
-      // }
     } else {
       setUserJourneyBtnActionName(btn2);
     }
@@ -207,6 +154,7 @@ const UserJourney = ({
         )}
         {!isMobile && (
           <img
+            alt=""
             src={
               typeof userJourneyImage === 'object'
                 ? userJourneyImage.src

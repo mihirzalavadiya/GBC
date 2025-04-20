@@ -118,10 +118,10 @@ const Layout = ({
     if (isRmLevel) {
       setRmLevel(isRmLevel);
     }
-  }, [isRmLevel]);
+  }, [isRmLevel, setRmLevel]);
 
   useEffect(() => {
-    if (isModalOpen == false) {
+    if (isModalOpen === false) {
       setVideoStart(false);
     }
   }, [isModalOpen]);
@@ -296,6 +296,7 @@ const Layout = ({
                   onClick={() => setVideoStart(true)}
                 >
                   <img
+                    alt=""
                     src={
                       typeof videoBtnImage === 'object'
                         ? videoBtnImage.src
@@ -306,6 +307,7 @@ const Layout = ({
               </div>
               <div style={{ position: 'absolute', bottom: 0, right: 0 }}>
                 <img
+                  alt=""
                   src={
                     typeof mobileImageGBC === 'object'
                       ? mobileImageGBC.src
@@ -324,6 +326,7 @@ const Layout = ({
                 frameborder="0"
                 allowfullscreen
                 allow="autoplay"
+                title="Financial Planning Explanation Video"
               ></iframe>
             </div>
           )}

@@ -14,7 +14,6 @@ const RateOfReturnModal = ({ analytics }) => {
     setCalculateReturns,
     modalRateofReturn,
     setModalRateofReturn,
-    setAnswersObj,
     userDetails,
     apiBaseUrl,
     plateform,
@@ -22,7 +21,7 @@ const RateOfReturnModal = ({ analytics }) => {
     rmLevel,
   } = useContext(GBCcontext);
 
-  const { isMobile, isTablet } = useMediaQueryCustom();
+  const { isMobile } = useMediaQueryCustom();
 
   const { rateOfReturn } = calculateReturns || {};
 
@@ -167,9 +166,6 @@ const RateOfReturnModal = ({ analytics }) => {
 
   return (
     <Modal
-      // title={
-      //   <span className="bold font-size-18 line-height-24 text-1f1f1f">Manually input Target Rate of Returns</span>
-      // }
       centered
       visible={modalRateofReturn}
       onOk={() => setModalRateofReturn(false)}
