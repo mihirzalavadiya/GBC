@@ -110,7 +110,7 @@ const Layout = ({
     }
     sessionStorage?.removeItem('gbcflow');
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userDetailsData, isRmLevel]);
+  }, []);
 
   useEffect(() => {
     setApiBaseUrl(baseUrl);
@@ -327,7 +327,7 @@ const Layout = ({
               <iframe
                 width="100%"
                 height="286px"
-                src="https://www.youtube.com/embed/VX6grAMbZmQ?autoplay=1"
+                src="https://www.youtube.com/embed/_vCAC6CQTXM?autoplay=1"
                 frameborder="0"
                 allowfullscreen
                 allow="autoplay"

@@ -21,9 +21,6 @@ function HighChartComponent({
   const { viewMoreDeatils, setViewMoreDetails, userDetails, plateform } =
     useContext(GBCcontext);
 
-  const { rmClientId } = userDetails || {};
-  console.log('rmClientId', rmClientId);
-
   return (
     <Row
       className={`high-chart-section flex ${

@@ -118,7 +118,8 @@ const GBCQuestions = ({
         univCost: 0,
       });
     }
-  }, [answersObj, answersObj.numberOfChildren, setAnswersObj]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [answersObj?.numberOfChildren]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedCalculate = useCallback(
@@ -475,12 +476,6 @@ const GBCQuestions = ({
                                       : 'slider-rm-conatiner'
                                   }
                                 >
-                                  {console.log(
-                                    '1hello12345',
-                                    (answersObj && answersObj[key] * 100) / dif,
-                                    key,
-                                    dif
-                                  )}
                                   {plateform ? (
                                     <Slider
                                       className="slider"

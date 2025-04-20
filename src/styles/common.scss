@@ -8,6 +8,10 @@ $directions: top, bottom, left, right;
   padding: 0px;
 }
 
+body {
+  background-color: #363636;
+}
+
 @for $i from 0 through $dimensions {
   @each $dir in $directions {
     .margin-#{$dir}-#{$i} {
