@@ -1,7 +1,7 @@
-@import "../colors.scss";
+@import '../colors.scss';
 
 .questions-container {
-  @media (min-width: "1023px") {
+  @media (min-width: '1023px') {
     background: $kristal-dark-grey-80;
     border-radius: 16px;
     position: relative;
@@ -13,7 +13,7 @@
     line-height: 28px;
     color: #f0ede4;
 
-    @media (max-width: "576px") {
+    @media (max-width: '576px') {
       font-size: 16px;
       line-height: 22px;
     }
@@ -54,7 +54,7 @@
     border-radius: 16px !important;
     background: #1f1f1f !important;
 
-    @media (max-width: "1023px") {
+    @media (max-width: '1023px') {
       background: transparent !important;
     }
   }
@@ -83,14 +83,14 @@
     }
   }
   .questions-collapse-panel {
-    @media (max-width: "1023px") {
+    @media (max-width: '1023px') {
       margin-top: 332px;
     }
 
     overflow: auto;
     height: 775px;
 
-    @media (max-width: "1023px") {
+    @media (max-width: '1023px') {
       overflow: hidden;
       height: 100%;
     }
@@ -98,21 +98,24 @@
     .ant-collapse-item {
       border-color: transparent;
       .ant-collapse-header {
-        background: #f0ede4;
+        background: #6c8dff;
         border-radius: 16px 16px 16px 16px !important;
         padding: 15px 24px !important;
+      }
+      .ant-collapse-content {
+        background: #e8f0fe;
       }
     }
     .ant-collapse-item.ant-collapse-item-active {
       border-color: transparent;
       .ant-collapse-header {
-        background: #f0ede4;
+        background: #6c8dff;
         border-radius: 16px 16px 0px 0px !important;
       }
     }
     .ant-collapse-content-box {
       padding: 16px 24px;
-      @media (max-width: "767px") {
+      @media (max-width: '767px') {
         padding: 12px;
       }
     }
@@ -143,7 +146,7 @@
 
     .slider-portal-conatiner {
       .ant-slider .ant-slider-handle::before {
-        content: "";
+        content: '';
         background: transparent;
         border: none;
         height: 18px;
@@ -153,7 +156,7 @@
         background-repeat: no-repeat;
       }
       .ant-slider .ant-slider-handle::after {
-        content: "";
+        content: '';
         background: transparent;
         border: none;
         position: absolute;
@@ -167,7 +170,7 @@
         border-radius: 0%;
         cursor: pointer;
         transition: none;
-        background: url("../../../public/images/sliderHandler.svg") !important;
+        background: url('../../../public/images/sliderHandler.svg') !important;
         height: 17px;
         width: 14px;
         background-size: 100% 100% !important;
@@ -175,17 +178,17 @@
     }
     .slider-rm-conatiner {
       .ant-slider .ant-slider-handle::before {
-        content: "";
+        content: '';
         background: transparent;
         border: none;
         height: 18px;
         inset-block-start: -2px;
         inset-inline-start: -2px;
-        background-image: url("../../../public/images/sliderHandler.svg") !important;
+        background-image: url('../../../public/images/sliderHandler.svg') !important;
         background-repeat: no-repeat;
       }
       .ant-slider .ant-slider-handle::after {
-        content: "";
+        content: '';
         background: transparent;
         border: none;
         position: absolute;
@@ -199,7 +202,7 @@
         border-radius: 0%;
         cursor: pointer;
         transition: none;
-        background: url("../../../public/images/sliderHandler.svg") !important;
+        background: url('../../../public/images/sliderHandler.svg') !important;
         // height: 17px;
         // width: 14px;
         // background-size: 100% 100% !important;
@@ -246,12 +249,12 @@
     }
     .slider {
       .ant-slider .ant-slider-handle::before {
-        content: "";
-        background: url("../../../public/images/sliderHandler.svg") !important;
+        content: '';
+        background: url('../../../public/images/sliderHandler.svg') !important;
       }
       .ant-slider .ant-slider-handle::after {
-        content: "";
-        background: url("../../../public/images/sliderHandler.svg") !important;
+        content: '';
+        background: url('../../../public/images/sliderHandler.svg') !important;
       }
       .ant-slider-mark {
         margin-top: 5px;
@@ -285,7 +288,8 @@
 
       .calculator-btn {
         background: $kristal-dark-grey-80;
-        box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25), 1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+        box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
+          1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
         border-radius: 24px;
         font-weight: 700;
         font-size: 12px;
@@ -301,7 +305,8 @@
       }
       .rm-calculator-btn {
         background: var(--kristal-blue-80);
-        box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25), 1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+        box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
+          1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
         border-radius: 24px;
         font-weight: 700;
         font-size: 12px;

@@ -152,7 +152,7 @@ const UserJourney = ({
             </Col>
           </Row>
         )}
-        {!isMobile && (
+        {/* {!isMobile && (
           <img
             alt=""
             src={
@@ -161,7 +161,7 @@ const UserJourney = ({
                 : userJourneyImage
             }
           />
-        )}
+        )} */}
       </div>
       {(isMobile || isTablet) &&
         userDetails &&

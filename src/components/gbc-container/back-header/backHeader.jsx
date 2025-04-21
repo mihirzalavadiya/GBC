@@ -113,9 +113,7 @@ const BackHeader = ({ analytics, upgradeAccreditedRequestHandlerForGBC }) => {
                 className="space-left long"
                 style={{ height: '24px', borderColor: '#CCCCCC' }}
               />
-              <span className="header-title space-left long">
-                Goal-based Target-return Calculator
-              </span>
+              <span className="header-title space-left long">GBC</span>
             </Col>
             {!rmEditable && !rmLevel && (
               <Col span={12} style={{ textAlign: 'right' }}>

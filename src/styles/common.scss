@@ -9,7 +9,7 @@ $directions: top, bottom, left, right;
 }
 
 body {
-  background-color: #363636;
+  background-color: #e8f0fe;
 }
 
 @for $i from 0 through $dimensions {
@@ -249,7 +249,7 @@ body {
   line-height: 22px;
   color: $kristal-ecru-100;
   border: 2px solid $kristal-blue-60;
-  background: $kristal-blue-60;
+  background: #3d5afe;
   border-radius: 10px;
   padding: 9px 24px;
   height: 100%;

@@ -1,8 +1,9 @@
-@import "../colors.scss";
+@import '../colors.scss';
 .user-journey-conatiner {
-  background: $kristal-dark-grey-60;
+  background: #6c8dff;
   //   box-shadow: -18px -18px 36px rgba(255, 255, 255, 0.25), 18px 18px 36px rgba(0, 0, 0, 0.25);
-  box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25), 1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+  box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
+    1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
 
   .user-journey-main {
@@ -14,7 +15,7 @@
       color: $kristal-ecru-100;
     }
 
-    @media (max-width: "768px") {
+    @media (max-width: '768px') {
       padding: 12px;
 
       .user-journey-title {
@@ -23,7 +24,7 @@
       }
     }
 
-    @media (max-width: "576px") {
+    @media (max-width: '576px') {
       padding: 16px;
       .user-journey-title {
         font-size: 14px;
@@ -32,7 +33,7 @@
     }
   }
 
-  @media (max-width: "1023px") {
+  @media (max-width: '1023px') {
     margin-left: 16px;
     margin-right: 16px;
   }
@@ -56,7 +57,7 @@
     padding: 24px;
     position: relative;
     border-radius: 8px;
-    background: #1f1f1f;
+    background: #6c8dff;
     margin-top: 24px;
   }
 
@@ -96,8 +97,8 @@
 
 .vedio-tutorial-section {
   padding: 12px 24px;
-  background: #363636;
-  box-shadow: 0px 4px 5px #1f1f1f inset;
+  background: #6c8dff;
+  box-shadow: 0px 4px 5px #4da3ff inset;
   border-radius: 15.88px;
   border: 0.99px #777777 solid;
 

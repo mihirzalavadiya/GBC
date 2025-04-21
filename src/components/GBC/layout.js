@@ -268,9 +268,7 @@ const Layout = ({
           closable={false}
         >
           <div className="flex space-between">
-            <div className="bold font-size-24 line-height-28">
-              Goal-based Target-Return Calculator
-            </div>
+            <div className="bold font-size-24 line-height-28">GBC</div>
             <div onClick={handleCancel} className="pointer">
               <CloseOutlined style={{ fontSize: '25px', color: '#777777' }} />
             </div>
@@ -285,12 +283,8 @@ const Layout = ({
           {!videoStart ? (
             <div className="video-container">
               <div style={{ maxWidth: isMobile ? '100%' : '291px' }}>
-                <div className="bold font-size-18 line-height-24 text-fff">
-                  Goal-based
-                  <br />
-                  Target-Returns Calculator
-                </div>
-                <div className="margin-top-4 text-777 font-size12 line-height-18">
+                <div className="bold font-size-18 line-height-24">GBC</div>
+                <div className="margin-top-4 font-size12 line-height-18">
                   Wondering what would be the ideal return for
                   portfolio?Maximise your returns with a personalised investment
                   plan and achieve ideal allocation. Use our Goal-Based Target
@@ -310,7 +304,7 @@ const Layout = ({
                   />
                 </div>
               </div>
-              <div style={{ position: 'absolute', bottom: 0, right: 0 }}>
+              {/* <div style={{ position: 'absolute', bottom: 0, right: 0 }}>
                 <img
                   alt=""
                   src={
@@ -320,7 +314,7 @@ const Layout = ({
                   }
                   height={235}
                 />
-              </div>
+              </div> */}
             </div>
           ) : (
             <div className="video-container">

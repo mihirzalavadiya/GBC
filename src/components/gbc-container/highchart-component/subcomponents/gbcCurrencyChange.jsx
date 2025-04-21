@@ -71,7 +71,7 @@ const GbcCurrencyChange = ({ analytics }) => {
               onClick={mobileBackHandler}
             />
           )}
-        <span className="title">Goal-based Target-return Calculator</span>
+        <span className="title">GBC</span>
       </Col>
       <Col md={8} sm={8} xs={4} className="flex end column-center">
         {!isMobile && !isTablet && (

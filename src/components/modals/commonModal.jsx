@@ -426,7 +426,7 @@ const CommonModal = ({ analytics, upgradeAccreditedRequestHandlerForGBC }) => {
           <Row className="flex row-center text-center font-size-14 line-height-20 margin-top-10">
             You have successfully unlocked all the
             <br />
-            features of the Goal-based Target-return Calculator
+            features of the GBC
           </Row>
         </>
       );

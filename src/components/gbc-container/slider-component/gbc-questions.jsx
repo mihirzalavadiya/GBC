@@ -191,7 +191,7 @@ const GBCQuestions = ({
         {!isMobile && !isTablet && (
           <Row gutter={[24]} className="flex column-center">
             <Col md={15} sm={16} xs={20}>
-              <span className="title">Goal-based Target-return Calculator</span>
+              <span className="title">GBC</span>
             </Col>
             <Col md={9} sm={8} xs={4} className="flex end column-center">
               {!isMobile && <span className="currency-label">Currency :</span>}
