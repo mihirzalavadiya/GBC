@@ -1,6 +1,5 @@
 import { Button, Col, Row } from 'antd';
 import React, { useContext } from 'react';
-import userJourneyImage from '../../../images/userjourney.svg';
 import { calculateTimeDifference, userJourneyData } from '../utils';
 import useMediaQueryCustom from '../../../GBC/useMediaQueryCustome';
 import GBCcontext from '../../../GBC/GBCcontext';

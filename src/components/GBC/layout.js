@@ -10,7 +10,6 @@ import MobileUserJourney from '../gbc-container/highchart-component/subcomponent
 import { getModelForAUser } from './service';
 import { defaultAnswerObj } from '../gbc-container/slider-component/utils';
 import { CloseOutlined } from '@ant-design/icons';
-import mobileImageGBC from '../images/gbc-banner-mobile-img.png';
 import videoBtnImage from '../images/videoBtnImg.svg';
 
 const Layout = ({
