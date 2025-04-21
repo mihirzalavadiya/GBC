@@ -1,9 +1,10 @@
 @import '../colors.scss';
 .user-journey-conatiner {
-  background: #6c8dff;
+  background: $kristal-blue-80;
   //   box-shadow: -18px -18px 36px rgba(255, 255, 255, 0.25), 18px 18px 36px rgba(0, 0, 0, 0.25);
-  box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
-    1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+  // box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
+  //   1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 5px $kristal-dark-grey-60 inset;
   border-radius: 24px;
 
   .user-journey-main {
@@ -48,6 +49,7 @@
 .video-modal {
   .ant-modal-content {
     border-radius: 24px;
+    background-color: $kristal-dark-grey-80;
   }
   .ant-modal-body {
     padding: 32px;
@@ -57,12 +59,12 @@
     padding: 24px;
     position: relative;
     border-radius: 8px;
-    background: #6c8dff;
+    background: $kristal-multi-asset;
     margin-top: 24px;
   }
 
   .video-btn {
-    background: #f44336;
+    background: $kristal-dark-grey-80;
     height: 72px;
     width: 72px;
     border-radius: 50%;
@@ -77,9 +79,9 @@
     font-size: 16px;
     line-height: 22px;
     text-align: center;
-    color: #ffffff;
-    background: #3761c8;
-    border: 2px solid var(--kristal-blue-80);
+    // color: $kristal-ecru-100;
+    background: $kristal-multi-asset;
+    border: 2px solid $kristal-multi-asset;
     border-radius: 10px;
     padding: 9px 24px;
     height: 100%;
@@ -97,10 +99,10 @@
 
 .vedio-tutorial-section {
   padding: 12px 24px;
-  background: #6c8dff;
-  box-shadow: 0px 4px 5px #4da3ff inset;
+  background: $kristal-blue-80;
+  box-shadow: 0px 4px 5px $kristal-dark-grey-60 inset;
   border-radius: 15.88px;
-  border: 0.99px #777777 solid;
+  border: 0.99px $kristal-blue-80 solid;
 
   .vedio-text {
     color: white;
@@ -110,7 +112,7 @@
   }
 
   .video-btn-view {
-    background: #f44336;
+    background: $kristal-dark-grey-80;
     height: 36px;
     width: 36px;
     border-radius: 50%;

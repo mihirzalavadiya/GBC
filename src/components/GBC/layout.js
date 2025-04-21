@@ -179,6 +179,9 @@ const Layout = ({
                 sm={{ span: 24, order: 2 }}
                 xs={{ span: 24, order: 2 }}
                 className={(isMobile || isTablet) && 'margin-top-16'}
+                style={{
+                  filter: 'drop-shadow(6px 2px 16px rgba(136, 165, 191, 0.48))',
+                }}
               >
                 <GBCQuestions
                   upgradeAccreditedRequestHandlerForGBC={
@@ -195,6 +198,9 @@ const Layout = ({
               md={{ span: 24, order: 1 }}
               sm={{ span: 24, order: 1 }}
               xs={{ span: 24, order: 1 }}
+              style={{
+                filter: 'drop-shadow(6px 2px 16px rgba(136, 165, 191, 0.48))',
+              }}
             >
               {(isMobile || isTablet) && !viewMoreDeatils ? (
                 <MobilePieChart
@@ -267,7 +273,12 @@ const Layout = ({
           closable={false}
         >
           <div className="flex space-between">
-            <div className="bold font-size-24 line-height-28">GBC</div>
+            <div
+              className="bold font-size-24 line-height-28"
+              style={{ color: '#dceafc' }}
+            >
+              GBC
+            </div>
             <div onClick={handleCancel} className="pointer">
               <CloseOutlined style={{ fontSize: '25px', color: '#777777' }} />
             </div>
@@ -276,8 +287,8 @@ const Layout = ({
             className="margin-top-8 text-999 font-size-14 line-height-20"
             style={{ maxWidth: isMobile ? '100%' : '414px' }}
           >
-            Discover the significance of the Goal-based Target-return
-            Calculator, a pivotal tool in your investment journey.
+            Discover the significance of the GBC, a pivotal tool in your
+            investment journey.
           </div>
           {!videoStart ? (
             <div className="video-container">

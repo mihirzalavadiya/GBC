@@ -52,7 +52,7 @@
 
   .ant-collapse {
     border-radius: 16px !important;
-    background: #1f1f1f !important;
+    background: $kristal-dark-grey-80 !important;
 
     @media (max-width: '1023px') {
       background: transparent !important;
@@ -98,18 +98,18 @@
     .ant-collapse-item {
       border-color: transparent;
       .ant-collapse-header {
-        background: #6c8dff;
+        background: $kristal-blue-80;
         border-radius: 16px 16px 16px 16px !important;
         padding: 15px 24px !important;
       }
       .ant-collapse-content {
-        background: #e8f0fe;
+        background: $kristal-alternatives;
       }
     }
     .ant-collapse-item.ant-collapse-item-active {
       border-color: transparent;
       .ant-collapse-header {
-        background: #6c8dff;
+        background: $kristal-blue-80;
         border-radius: 16px 16px 0px 0px !important;
       }
     }
@@ -130,12 +130,12 @@
       font-weight: 700;
     }
     .ant-slider-track {
-      background: #638ae9;
+      background: $kristal-blue-60;
       border-radius: 3px 0px 0px 3px;
       height: 6px;
     }
     .ant-slider-rail {
-      background: #cccccc;
+      background: $kristal-fixed-income;
       border-radius: 3px 3px 3px 3px;
       height: 6px;
     }
@@ -212,7 +212,7 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 19px;
-      color: #363636;
+      color: $kristal-ecru-100;
     }
     .question {
       font-weight: 700;
@@ -224,7 +224,7 @@
       font-size: 12px;
     }
     .inc-dnc-btn {
-      background: #f7f5f2;
+      background: $kristal-fixed-income;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.12);
       border-radius: 50%;
       width: 20px;
@@ -241,12 +241,14 @@
       }
     }
     .ant-input-number-group-addon {
-      background: rgba(204, 204, 204, 0.4);
+      background: $kristal-fixed-income;
       font-weight: 400;
       font-size: 10px;
       line-height: 18px;
-      color: rgba(153, 153, 153, 0.6);
+      color: $kristal-blue-60;
+      border: 1px solid $kristal-fixed-income !important;
     }
+
     .slider {
       .ant-slider .ant-slider-handle::before {
         content: '';

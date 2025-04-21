@@ -165,7 +165,7 @@ const GBCQuestions = ({
           <span className="panel-title">{title}</span>
           <div
             style={{
-              border: '1px solid black',
+              border: '1px solid #dceafc',
               flexGrow: '1',
               marginTop: '3px',
             }}

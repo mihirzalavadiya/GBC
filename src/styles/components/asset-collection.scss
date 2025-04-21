@@ -12,7 +12,11 @@
 }
 
 .radio-bg-container {
-  background-image: linear-gradient(311.07deg, #1f1f1f 35.12%, #f0ede4 140.4%);
+  background-image: linear-gradient(
+    311.07deg,
+    $kristal-dark-grey-60 35.12%,
+    $kristal-commodities 140.4%
+  );
   border-radius: 32px;
   padding: 1px;
   box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
@@ -160,7 +164,7 @@
   background-color: #7165ba;
 }
 .asset-private-assets {
-  background-color: #363636;
+  background-color: $kristal-ecru-100;
 }
 .asset-pending-orders {
   background-color: #f44336;
@@ -194,7 +198,7 @@
   color: #7165ba;
 }
 .asset-private-assets-text {
-  color: #363636;
+  color: $kristal-ecru-100;
 }
 .asset-pending-orders-text {
   color: #f44336;

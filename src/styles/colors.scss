@@ -1,16 +1,23 @@
-$kristal-dark-grey-80: #1f1f1f;
-$kristal-dark-grey-60: #363636;
-$kristal-dark-grey-40: #777777;
-$kristal-dark-grey-20: #999999;
-$kristal-dark-grey-10: #cccccc;
-$kristal-ecru-100: #f0ede4;
-$kristal-ecru-80: #f7f5f2;
-$kristal-blue-80: #3761c8;
-$kristal-blue-60: #638ae9;
-$kristal-white: #ffffff;
-$kristal-black: #000000;
-$kristal-equity: #5c59dc;
-$kristal-commodities: #5786ff;
-$kristal-fixed-income: #cd82fb;
-$kristal-reits: #ffabce;
-$kristal-alternatives: #ffd78a;
+$kristal-dark-grey-80: #0d1b2a; // Deep navy
+$kristal-dark-grey-60: #1b263b; // Dark steel blue
+$kristal-dark-grey-40: #415a77; // Desaturated blue
+$kristal-dark-grey-20: #778da9; // Light blue-gray
+$kristal-dark-grey-10: #e0e1dd; // Very light gray-blue
+
+$kristal-ecru-100: #dceafc; // Very light blue
+$kristal-ecru-80: #edf4fd; // Lighter variant of light blue
+
+$kristal-blue-80: #1e3a8a; // Strong blue (main theme)
+$kristal-blue-60: #3b82f6; // Vivid sky blue
+
+$kristal-white: #ffffff; // Remain white
+$kristal-black: #000000; // Remain black
+
+// Asset class colors adjusted to blue hues
+$kristal-equity: #3e64ff; // Bold indigo blue
+$kristal-commodities: #60a5fa; // Light sky blue
+$kristal-fixed-income: #93c5fd; // Pastel blue
+$kristal-reits: #bfdbfe; // Soft baby blue
+$kristal-alternatives: #dbeafe; // Very light powder blue
+
+$kristal-multi-asset: #6c8dff; // Soft baby blue

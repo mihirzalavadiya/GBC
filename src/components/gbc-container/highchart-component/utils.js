@@ -175,12 +175,7 @@ export const userJourneyData = (userDetails) => {
     };
   } else {
     return {
-      title: (
-        <>
-          Signup to unlock the full features of the <br /> goal based returns
-          calculator
-        </>
-      ),
+      title: <>Signup to unlock the full features of the GBC</>,
       btn1: 'Talk to Advisor',
       btn2: 'Signup',
     };

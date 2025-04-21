@@ -1,10 +1,10 @@
-@import "../colors.scss";
+@import '../colors.scss';
 
 .high-chart-section-mobile {
   border-radius: 0px !important;
   height: 100vh;
 
-  @media (max-width: "767px") {
+  @media (max-width: '767px') {
     height: 100%;
   }
 }
@@ -15,7 +15,7 @@
   border-radius: 16px;
   padding: 32px;
 
-  @media (max-width: "1023px") {
+  @media (max-width: '1023px') {
     padding: 16px;
   }
 
@@ -28,7 +28,7 @@
     line-height: 28px;
     color: #f0ede4;
 
-    @media (max-width: "767px") {
+    @media (max-width: '767px') {
       font-size: 16px;
       line-height: 22px;
     }
@@ -51,7 +51,7 @@
       line-height: 22px;
       color: #f0ede4;
 
-      @media (max-width: "767px") {
+      @media (max-width: '767px') {
         font-size: 14px;
         line-height: 20px;
       }
@@ -123,10 +123,15 @@
       left: 50%;
       transform: translateX(-50%);
       top: 100px;
-      background-image: linear-gradient(311.07deg, #1f1f1f 35.12%, #f0ede4 140.4%);
+      background-image: linear-gradient(
+        311.07deg,
+        #1f1f1f 35.12%,
+        #f0ede4 140.4%
+      );
       border-radius: 24px;
       padding: 1px;
-      box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25), 1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
+      box-shadow: -1.90995px -1.90995px 3.81989px rgba(255, 255, 255, 0.25),
+        1.90995px 1.90995px 3.81989px rgba(0, 0, 0, 0.25);
       .chart-edit-btn {
         background: #1f1f1f;
         border-radius: 24px;
@@ -148,7 +153,7 @@
     }
   }
 
-  @media (max-width: "576px") {
+  @media (max-width: '576px') {
     padding: 16px;
   }
 }
@@ -158,7 +163,7 @@
   .ant-modal-content {
     border-radius: 16px;
     padding: 32px 41px;
-    @media (max-width: "767px") {
+    @media (max-width: '767px') {
       padding: 16px !important;
     }
   }
@@ -168,7 +173,7 @@
     line-height: 24px;
     font-weight: bold;
     color: #1f1f1f;
-    @media (max-width: "767px") {
+    @media (max-width: '767px') {
       font-weight: 700 !important;
       font-size: 16px !important;
       line-height: 22px !important;
@@ -183,7 +188,7 @@
   .ant-modal-close {
     top: 18px;
     right: 38px;
-    @media (max-width: "767px") {
+    @media (max-width: '767px') {
       top: 17px !important;
       right: 19px !important;
     }
